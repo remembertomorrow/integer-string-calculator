@@ -36,6 +36,18 @@ public class CalculatorService {
     }
 
 
+    /**
+     *The main method in the calculator class. The algorithm works as follows:
+     *<br><br>
+     * 1. Split expression using space as a separator, and produce String array containing all integers and operators
+     *<br><br>
+     * 2. Validate the input
+     *<br><br>
+     * 3. Try to perform first precedence operation (in our case: multiplication or division)
+     *<br><br>
+     * 4. While operations at hand are second precedence (addition or subtraction), just continue performing them, until you encounter a first precedence operation, in which case perform it for as long as needed, and go back to second precedence
+     * @return BigDecimal
+     */
     public BigDecimal calculate(String integerString) {
         expressionElements = integerString.split(" ");
         validateIntegerString(integerString);
@@ -55,6 +67,14 @@ public class CalculatorService {
     }
 
 
+    /**
+     * Method to calculate first precedence operations (multiplication or division)
+     *<br><br>
+     * 1. Get the number at hand
+     *<br><br>
+     * 2. While operations at hand are first precedence, just continue performing them, until you encounter a second precedence operation, in which case return results
+     * @return BigDecimal
+     */
     private BigDecimal calculateFirstPrecedence() {
 
         BigDecimal number = processNumber();
@@ -73,6 +93,10 @@ public class CalculatorService {
     }
 
 
+    /**
+     * Method to get the number at a given index in the array
+     * @return BigDecimal
+     */
     private BigDecimal processNumber() {
         BigDecimal number = new BigDecimal(currentToken()).setScale(resultScale, RoundingMode.HALF_EVEN);
         moveIndex();

@@ -9,6 +9,6 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 public class CalculationResponse {
 
-    private BigDecimal response;
+    private BigDecimal result;
 
 }
