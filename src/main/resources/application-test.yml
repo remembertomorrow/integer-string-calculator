@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: calculator
+
+calculator:
+  input-length-limit: 1000
+  result:
+    scale: 10
