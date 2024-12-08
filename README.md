@@ -1,4 +1,4 @@
-# Take home task for Directio
+# Take home task
 
 This Spring Boot app provides a single endpoint, which can be used to calculate the value of a String represented expression consisting of space separated integers and 4 possible operators: +, -, *, and /.
 
